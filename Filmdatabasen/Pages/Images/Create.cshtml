@@ -1,0 +1,54 @@
+﻿@page
+@model Filmdatabasen.Pages.Images.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Movie.MovieCategory" class="control-label"></label>
+                <input asp-for="Movie.MovieCategory" class="form-control" />
+                <span asp-validation-for="Movie.MovieCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.MovieTitle" class="control-label"></label>
+                <input asp-for="Movie.MovieTitle" class="form-control" />
+                <span asp-validation-for="Movie.MovieTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.ImgUrl" class="control-label"></label>
+                <input asp-for="Movie.ImgUrl" class="form-control" />
+                <span asp-validation-for="Movie.ImgUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Description" class="control-label"></label>
+                <input asp-for="Movie.Description" class="form-control" />
+                <span asp-validation-for="Movie.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.ImdbUrl" class="control-label"></label>
+                <input asp-for="Movie.ImdbUrl" class="form-control" />
+                <span asp-validation-for="Movie.ImdbUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
